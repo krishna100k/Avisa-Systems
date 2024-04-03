@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825.96 1034.49">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #231f20;
+      }
+
+      .cls-2, .cls-3 {
+        font-family: SourceSansRoman-Bold, 'Source Sans Variable';
+        font-size: 925.31px;
+        font-variation-settings: 'wght' 700;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        fill: #3fb549;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(0 768.01) scale(.5 1)"><tspan x="0" y="0">&lt; </tspan></text>
+  <text class="cls-3" transform="translate(337.4 768.01)"><tspan x="0" y="0">&gt;</tspan></text>
+  <path class="cls-1" d="M228.94,559.62s157.06-63.45,139.91-309.6l84.38,31.19s-1.62,306.3-224.3,390.37v-111.95Z"/>
+</svg>
