@@ -12,8 +12,8 @@ const AboutUs = () => {
             Our Vision
           </p>
         }
-        className="h-full border rounded-md w-[90%] md:w-1/2 flex-1 "
-        color="#22C55E"
+        className="h-full rounded-md w-[90%] md:w-1/2 flex-1 "
+        color="#13151B"
       >
         <p className="text-xl"><span className="text-green-500">Avisa Systems</span> is dedicated to
         providing top-tier IT consultancy services and crafting bespoke
@@ -25,7 +25,7 @@ const AboutUs = () => {
             Our Mission
           </p>
         }
-        className="h-full border rounded-md w-[90%] md:w-1/2 flex-1"
+        className="h-full  rounded-md w-[90%] md:w-1/2 flex-1"
         color="#22C55E"
       >
         <p className="text-xl">The first rule of <span className="text-green-500">MRR Club</span> is

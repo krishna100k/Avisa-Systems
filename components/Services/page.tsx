@@ -16,7 +16,7 @@ function Services() {
       ),
     },
     {
-      title: "Full stack Web Applications",
+      title: "Web Applications",
       value: "Full stack Web Applications",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
@@ -58,12 +58,12 @@ function Services() {
   ];
 
   return (
-    <div className="flex md:flex-row flex-col-reverse justify-center md:gap-5 items-center md:px-10">
+    <div className="flex md:flex-row flex-col-reverse justify-center md:gap-5 items-center md:px-10 pt-10">
     <div id="services" className=" flex-2 w-[90%] h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto md:w-full md:my-40">
       <Tabs tabs={tabs} />
     </div>
     <div className="flex-1 flex justify-center items-center h-full md:my-0 my-20">
-    <h1 className=" text-white text-7xl md:text-[7vw] leading-snug font-black pt-10 md:pt-[18rem]">Services <br /> We <br /> Provide</h1>
+    <h1 className=" text-white opacity-95 text-7xl md:text-[7vw] leading-snug font-black pt-10 md:pt-[18rem]">Services <br /> We <br /> Provide</h1>
     </div>
     </div>
   );
