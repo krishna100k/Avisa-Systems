@@ -15,7 +15,7 @@ export default function Home() {
       <Testimonials />
       <Services />
       <CallToAction />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }
