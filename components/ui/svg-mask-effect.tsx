@@ -9,12 +9,14 @@ export const MaskContainer = ({
   size = 10,
   revealSize = 600,
   className,
+  color
 }: {
   children?: string | React.ReactNode;
   revealText?: string | React.ReactNode;
   size?: number;
   revealSize?: number;
   className?: string;
+  color?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState<any>({ x: null, y: null });
@@ -42,7 +44,7 @@ export const MaskContainer = ({
       ref={containerRef}
       className={cn("h-screen relative", className)}
       animate={{
-        backgroundColor: isHovered ? "var(--slate-900)" : "#22C55E",
+        backgroundColor: isHovered ? "var(--slate-900)" : color,
       }}
     >
       <motion.div

@@ -23,14 +23,14 @@ function Header() {
 
       const scrollToWork = () => {
       window.scrollTo({
-        top: 1200,
+        top: 1000,
         behavior: "smooth"
       });
     };
 
 
   return (
-    <header className={`flex items-center w-screen h-[5rem] fixed top-0 left-0 z-[1000] overflow-hidden ${isScrolled && `backdrop-blur-sm bg-black/50  border-b border-gray-900`}`}>
+    <header className={`flex items-center w-screen h-[10vh] fixed top-0 left-0 z-[1000] overflow-hidden ${isScrolled && `backdrop-blur-sm bg-black/50  border-b border-gray-900`}`}>
       <Logo />
       <div className="flex justify-center items-center gap-2 md:gap-[30px] pl-5 md:pl-16">
         <Link className=" text-gray-400 text-sm font-bold hover:text-[15px] transition-all ease-in-out " href={"#services"} >Our Services</Link>
