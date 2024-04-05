@@ -42,7 +42,7 @@ export const MaskContainer = ({
       ref={containerRef}
       className={cn("h-screen relative", className)}
       animate={{
-        backgroundColor: isHovered ? "var(--slate-900)" : "#3BB54A",
+        backgroundColor: isHovered ? "var(--slate-900)" : "#22C55E",
       }}
     >
       <motion.div
@@ -63,7 +63,7 @@ export const MaskContainer = ({
           onMouseLeave={() => {
             setIsHovered(false);
           }}
-          className="max-w-4xl mx-auto text-center text-white  text-4xl font-bold relative z-20"
+          className="max-w-4xl py-10 mx-auto text-center text-white  text-4xl font-bold relative z-20"
         >
           {children}
         </div>

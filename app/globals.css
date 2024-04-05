@@ -2,11 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+}
+
 body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: #000000;
-  overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+}
+ 
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
 }
