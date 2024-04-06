@@ -41,7 +41,7 @@ const Footer = () => {
   return (
     <div className="grid grid-cols-2 grid-rows-2 justify-center items-center bg-[#13151B] dark: text-green-50">
       <div className=" col-span-2 md:col-span-1">
-        <div className="flex flex-col gap-7 justify-center items-start p-5 md:pl-24">
+        <div className="flex flex-col gap-16 justify-center items-start p-5 md:pl-24">
           <h1 className="text-6xl">Crafting Tomorrow's Solutions Today.</h1>
           <button className="border rounded-md p-3 transition-all ease-in-out duration-500 hover:bg-white hover:text-black">Get in Touch</button>
         </div>

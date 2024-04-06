@@ -133,7 +133,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="px-5 md:px-0 py-10 max-w-7xl relative mx-auto mt-[24vh] md:pt-[11vh] w-full left-0 top-0 overflow-hidden">
+    <div className="px-5 py-10 max-w-7xl relative mx-auto mt-[24vh] md:pt-[11vh] w-full left-0 top-0 overflow-hidden">
       <motion.h1
         className="text-2xl md:text-7xl font-bold dark:text-white"
         variants={textVariants}
