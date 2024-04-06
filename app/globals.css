@@ -19,7 +19,6 @@ body{
   scrollbar-width: none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
-  overflow-y: hidden;
 }
  
 .no-visible-scrollbar::-webkit-scrollbar {

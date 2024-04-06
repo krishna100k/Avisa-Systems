@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const AboutUs = () => {
   return (
-    <div className=" h-[40rem] w-screen flex flex-col md:flex-row items-center justify-center mt-52 md:p-10 gap-10 overflow-hidden">
+    <div id="about" className=" h-[40rem] w-screen flex flex-col md:flex-row items-center justify-center mt-52 md:p-10 gap-10 overflow-hidden">
       <MaskContainer
         revealText={
           <p className="max-w-4xl mx-auto text-white-800 text-center  text-4xl font-bold">
