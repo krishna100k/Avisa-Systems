@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -49,16 +50,55 @@ function Header() {
     };
   }, []);
 
+  const headerVariant = {
+    initial: {
+      height: "10vh",
+      transition: { delay: 0.1, duration: 0.5 },
+    },
+    animate: {
+      height: isOpen ? "100vh" : "auto",
+      transition: { duration: 0.5 },
+    },
+    exit: {
+      height: "10vh",
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      transition: { delay:1, duration: 0.5 },
+    }
+  };
+
+  const linkVariant = {
+    initial: {
+      opacity: 0,
+      y: "100%",
+      transition: { delay: 0.1 },
+    },
+    animate: {
+      opacity: 1,
+      y: "0%",
+      transition: { delay: 0.2, duration: 1, type: "spring" },
+    },
+  };
+
   return (
-    <header
-      className={`flex flex-col items-center w-screen px-5 py-[2vh] lg:px-[20vw] h-[10vh] fixed top-0 left-0 z-[1000] overflow-hidden ${
-        (isScrolled || isOpen) && `backdrop-blur-sm bg-black/50  border-b border-gray-900`
-      } ${isOpen && `h-screen`} ` }
+
+    <motion.header
+      className={`flex flex-col items-center w-screen px-5 py-[2vh] lg:px-[20vw] h-[10vh] fixed top-0 left-0 z-[1000]  
+      ${isScrolled && `backdrop-blur-sm bg-black/50  border-b border-gray-900`} 
+        ${isOpen && `backdrop-blur-sm bg-black/50  border-b border-gray-900`} `}
+      variants={headerVariant}
+      initial="initial"
+      animate={(isOpen) ? "animate" : "initial"}
+      exit="exit"
     >
       <div className="flex justify-between items-center w-full">
         <Logo />
         {isSmall ? (
-          <button className="text-white scale-150" onClick={() => setIsOpen(!isOpen)}><GiHamburgerMenu /></button>
+          <button
+            className="text-white scale-150"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <GiHamburgerMenu />
+          </button>
         ) : (
           <div className="flex justify-center items-center gap-2 md:gap-[30px] pl-5 md:pl-16">
             <Link
@@ -82,8 +122,13 @@ function Header() {
           </div>
         )}
       </div>
-      {(isSmall && isOpen) && (
-        <div className={`flex h-full flex-col justify-center items-center gap-10 md:gap-[30px]  md:pl-16`}>
+
+        <motion.div
+          className={`flex h-full flex-col justify-center items-center gap-10 md:gap-[30px]  md:pl-16`}
+          variants={linkVariant}
+          initial="initial"
+          animate={isOpen ? "animate" : "initial"}
+        >
           <Link
             className=" text-gray-400 text-sm font-bold hover:text-[15px] transition-all ease-in-out "
             href={"#services"}
@@ -102,9 +147,8 @@ function Header() {
           >
             Testimonials
           </Link>
-        </div>
-      )}
-    </header>
+        </motion.div>
+    </motion.header>
   );
 }
 
