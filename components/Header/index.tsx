@@ -52,19 +52,20 @@ function Header() {
 
   const headerVariant = {
     initial: {
-      height: "10vh",
-      transition: { delay: 0.1, duration: 0.5 },
+      height: "5rem",
+      backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.7)" : "transparent",
+      backdropFilter: isScrolled ? "blur(5px)" : "none",
+      borderBottom: isScrolled ? "solid 1px rgb(17 24 39)" : "none",
+      transition: { delay: 0.2, duration: 1 },
     },
     animate: {
       height: isOpen ? "100vh" : "auto",
+      backgroundColor: isOpen ? "rgba(0, 0, 0, 0.5)" : "transparent",
+      backdropFilter: isOpen ? "blur(5px)" : "none",
       transition: { duration: 0.5 },
     },
-    exit: {
-      height: "10vh",
-      backgroundColor: "rgba(0, 0, 0, 0.5)",
-      transition: { delay:1, duration: 0.5 },
-    }
   };
+  
 
   const linkVariant = {
     initial: {
@@ -82,8 +83,7 @@ function Header() {
   return (
 
     <motion.header
-      className={`flex flex-col items-center w-screen px-5 py-[2vh] lg:px-[20vw] h-[10vh] fixed top-0 left-0 z-[1000]  
-      ${isScrolled && `backdrop-blur-sm bg-black/50  border-b border-gray-900`} 
+      className={`flex flex-col items-center w-screen px-5 py-[1.2rem] lg:px-[20vw] h-[10vh] fixed top-0 left-0 z-[1000]   
         ${isOpen && `backdrop-blur-sm bg-black/50  border-b border-gray-900`} `}
       variants={headerVariant}
       initial="initial"
