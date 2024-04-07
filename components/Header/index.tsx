@@ -52,7 +52,7 @@ function Header() {
 
   const headerVariant = {
     initial: {
-      height: "5rem",
+      height: "8vh",
       backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.7)" : "transparent",
       backdropFilter: isScrolled ? "blur(5px)" : "none",
       borderBottom: isScrolled ? "solid 1px rgb(17 24 39)" : "none",
@@ -83,7 +83,7 @@ function Header() {
   return (
 
     <motion.header
-      className={`flex flex-col items-center w-screen px-5 py-[1.2rem] lg:px-[20vw] h-[10vh] fixed top-0 left-0 z-[1000]   
+      className={`flex flex-col items-center w-screen px-5 py-[1.1vh] md:py-[1.8vh] lg:px-[20vw] h-[10vh] fixed top-0 left-0 z-[1000]   
         ${isOpen && `backdrop-blur-sm bg-black/50  border-b border-gray-900`} `}
       variants={headerVariant}
       initial="initial"
