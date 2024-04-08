@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion, AnimatePresence } from "framer-motion";
+import { Opacity } from "@tsparticles/engine";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -53,19 +54,13 @@ function Header() {
   const headerVariant = {
     initial: {
       height: "8vh",
-      backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.7)" : "transparent",
-      backdropFilter: isScrolled ? "blur(5px)" : "none",
-      borderBottom: isScrolled ? "solid 1px rgb(17 24 39)" : "none",
-      transition: { delay: 0.2, duration: 1 },
+      transition: { delay: 0.4, duration: 0 },
     },
     animate: {
       height: isOpen ? "100vh" : "auto",
-      backgroundColor: isOpen ? "rgba(0, 0, 0, 0.5)" : "transparent",
-      backdropFilter: isOpen ? "blur(5px)" : "none",
       transition: { duration: 0.5 },
     },
   };
-  
 
   const linkVariant = {
     initial: {
@@ -80,16 +75,39 @@ function Header() {
     },
   };
 
-  return (
+  const backVariant = {
+    initial: {
+      height: "100%",
+      backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.7)" : "transparent",
+      backdropFilter: isScrolled ? "blur(5px)" : "none",
+      borderBottom: isScrolled ? "solid 1px rgb(17 24 39)" : "none",
+      transition: { delay: 0.2, duration: 1 },
+    },
+    animate: {
+      height: isOpen ? "100vh" : "auto",
+      backgroundColor: isOpen ? "rgba(0, 0, 0, 0.5)" : "transparent",
+      backdropFilter: isOpen ? "blur(5px)" : "none",
+      transition: { duration: 0.5 },
+    },
+  };
 
+  return (
     <motion.header
       className={`flex flex-col items-center w-screen px-5 py-[1.1vh] md:py-[1.8vh] lg:px-[20vw] h-[10vh] fixed top-0 left-0 z-[1000]   
-        ${isOpen && `backdrop-blur-sm bg-black/50  border-b border-gray-900`} `}
+
+        ${(isScrolled || isOpen) && `backdrop-blur-sm bg-black/50  border-b border-gray-900`} 
+        `}
       variants={headerVariant}
       initial="initial"
-      animate={(isOpen) ? "animate" : "initial"}
+      animate={isOpen ? "animate" : "initial"}
       exit="exit"
     >
+      {/* <motion.div
+        className={`absolute top-0 w-full h-full z-0 `}
+        variants={backVariant}
+        initial = "initial"
+        animate = {isOpen ? "animate" : "initial"}
+      ></motion.div> */}
       <div className="flex justify-between items-center w-full">
         <Logo />
         {isSmall ? (
@@ -123,31 +141,31 @@ function Header() {
         )}
       </div>
 
-        <motion.div
-          className={`flex h-full flex-col justify-center items-center gap-10 md:gap-[30px]  md:pl-16`}
-          variants={linkVariant}
-          initial="initial"
-          animate={isOpen ? "animate" : "initial"}
+      <motion.div
+        className={`flex h-full flex-col justify-center items-center gap-10 md:gap-[30px]  md:pl-16`}
+        variants={linkVariant}
+        initial="initial"
+        animate={isOpen ? "animate" : "initial"}
+      >
+        <Link
+          className=" text-gray-400 text-sm font-bold hover:text-[15px] transition-all ease-in-out "
+          href={"#services"}
         >
-          <Link
-            className=" text-gray-400 text-sm font-bold hover:text-[15px] transition-all ease-in-out "
-            href={"#services"}
-          >
-            Our Services
-          </Link>
-          <p
-            className=" text-gray-400 text-sm font-bold hover:text-[15px] transition-all ease-in-out cursor-pointer"
-            onClick={scrollToWork}
-          >
-            Our Work
-          </p>
-          <Link
-            className=" text-gray-400 text-sm font-bold hover:text-[15px] transition-all ease-in-out"
-            href={"#testimonials"}
-          >
-            Testimonials
-          </Link>
-        </motion.div>
+          Our Services
+        </Link>
+        <p
+          className=" text-gray-400 text-sm font-bold hover:text-[15px] transition-all ease-in-out cursor-pointer"
+          onClick={scrollToWork}
+        >
+          Our Work
+        </p>
+        <Link
+          className=" text-gray-400 text-sm font-bold hover:text-[15px] transition-all ease-in-out"
+          href={"#testimonials"}
+        >
+          Testimonials
+        </Link>
+      </motion.div>
     </motion.header>
   );
 }
