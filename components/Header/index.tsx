@@ -66,7 +66,7 @@ function Header() {
     initial: {
       opacity: 0,
       y: "100%",
-      transition: { delay: 0.1 },
+      transition: { delay: 0 },
     },
     animate: {
       opacity: 1,
@@ -75,32 +75,13 @@ function Header() {
     },
   };
 
-  const backVariant = {
-    initial: {
-      height: "100%",
-      backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.7)" : "transparent",
-      backdropFilter: isScrolled ? "blur(5px)" : "none",
-      borderBottom: isScrolled ? "solid 1px rgb(17 24 39)" : "none",
-      transition: { delay: 0.2, duration: 1 },
-    },
-    animate: {
-      height: isOpen ? "100vh" : "auto",
-      backgroundColor: isOpen ? "rgba(0, 0, 0, 0.5)" : "transparent",
-      backdropFilter: isOpen ? "blur(5px)" : "none",
-      transition: { duration: 0.5 },
-    },
-  };
 
   return (
-    <motion.header
-      className={`flex flex-col items-center w-screen px-5 py-[1.1vh] md:py-[1.8vh] lg:px-[20vw] h-[10vh] fixed top-0 left-0 z-[1000]   
-
-        ${(isScrolled || isOpen) && `backdrop-blur-sm bg-black/50  border-b border-gray-900`} 
+    <header
+      className={`flex flex-col items-center w-screen px-5 py-[1.5vh] md:py-[2.7vh] lg:px-[20vw]  fixed top-0 left-0 z-[1000] transition-all lg:transition-none delay-400 duration-500 ease-custom
+      ${isOpen ? ` h-[100vh] backdrop-blur-sm bg-black/50 border-none`: `h-[10vh]`}
+        ${isScrolled && `backdrop-blur-sm bg-black/50 transition-none border-b border-gray-900`} 
         `}
-      variants={headerVariant}
-      initial="initial"
-      animate={isOpen ? "animate" : "initial"}
-      exit="exit"
     >
       {/* <motion.div
         className={`absolute top-0 w-full h-full z-0 `}
@@ -166,7 +147,7 @@ function Header() {
           Testimonials
         </Link>
       </motion.div>
-    </motion.header>
+    </header>
   );
 }
 
