@@ -78,9 +78,9 @@ function Header() {
 
   return (
     <header
-      className={`flex flex-col items-center w-screen px-5 py-[1.5vh] md:py-[2.7vh] lg:px-[20vw]  fixed top-0 left-0 z-[1000] transition-all lg:transition-none delay-400 duration-500 ease-custom
+      className={`flex flex-col items-center w-screen px-5 py-[1.5vh] md:py-[2.7vh] lg:px-[20vw]  fixed top-0 left-0 z-[1000] transition-all lg:transition-none delay-400 duration-500 
       ${isOpen ? ` h-[100vh] backdrop-blur-sm bg-black/50 border-none`: `h-[10vh]`}
-        ${isScrolled && `backdrop-blur-sm bg-black/50 transition-none border-b border-gray-900`} 
+        ${isScrolled && `backdrop-blur-sm bg-black/50 md:border-b md:border-gray-900`} 
         `}
     >
       {/* <motion.div
