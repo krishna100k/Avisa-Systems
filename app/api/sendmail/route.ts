@@ -45,7 +45,7 @@ export const POST = async (req: NextRequest) => {
 
 
 
-export async function sendMail({
+ async function sendMail({
   to,
   name,
   subject,
