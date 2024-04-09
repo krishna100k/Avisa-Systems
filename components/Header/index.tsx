@@ -6,8 +6,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { motion, AnimatePresence } from "framer-motion";
-import { Opacity } from "@tsparticles/engine";
+import { motion} from "framer-motion";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -102,7 +101,7 @@ function Header() {
           <div className="flex justify-center items-center gap-2 md:gap-[30px] pl-5 md:pl-16">
             <Link
               className=" text-gray-400 text-sm font-bold hover:text-[15px] transition-all ease-in-out "
-              href={"#services"}
+              href={"/#services"}
             >
               Our Services
             </Link>
@@ -114,9 +113,15 @@ function Header() {
             </p>
             <Link
               className=" text-gray-400 text-sm font-bold hover:text-[15px] transition-all ease-in-out"
-              href={"#testimonials"}
+              href={"/#testimonials"}
             >
               Testimonials
+            </Link>
+            <Link
+              className=" text-gray-400 text-sm font-bold hover:text-[15px] transition-all ease-in-out"
+              href={"/contact"}
+            >
+              Contact Us
             </Link>
           </div>
         )}
