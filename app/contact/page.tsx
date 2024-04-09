@@ -1,8 +1,9 @@
+"use client"
+
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer/page";
 import Globe from "@/components/Globe";
 import Header from "@/components/Header";
-import Testimonials from "@/components/Testimonials/page";
 
 const Contact = () => {
   return (
