@@ -58,12 +58,12 @@ function Services() {
   ];
 
   return (
-    <div className="flex md:flex-row flex-col-reverse justify-center md:gap-5 items-center md:px-10 pt-10">
-    <div id="services" className=" flex-2 w-[90%] h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto md:w-full md:my-40">
-      <Tabs tabs={tabs} />
+    <div className="flex md:w-[90%] m-auto md:flex-row flex-col justify-center gap-10 items-center md:px-10 pt-10">
+    <div className="flex-1 flex justify-center md:justify-start items-center w-full h-full md:my-0 my-20">
+    <h1 className=" text-white text-center md:text-end opacity-95 text-5xl md:text-[6vw] leading-snug md:leading-relaxed font-black pt-10 md:pt-[18rem]">Services <br /> We <br /> Provide</h1>
     </div>
-    <div className="flex-1 flex justify-center items-center h-full md:my-0 my-20">
-    <h1 className=" text-white opacity-95 text-7xl md:text-[7vw] leading-snug font-black pt-10 md:pt-[18rem]">Services <br /> We <br /> Provide</h1>
+    <div id="services" className=" flex-2 w-[90%] md:w-full h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto md:my-40">
+      <Tabs tabs={tabs} />
     </div>
     </div>
   );

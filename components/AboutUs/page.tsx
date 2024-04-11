@@ -1,14 +1,12 @@
-import { BackgroundGradient } from "../ui/background-gradient";
 import { MaskContainer } from "../ui/svg-mask-effect";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
-import Image from "next/image";
+
 
 const AboutUs = () => {
   return (
-    <div id="about" className=" h-[40rem] w-screen flex flex-col md:flex-row items-center justify-center mt-52 md:p-10 gap-10 overflow-hidden">
+    <div id="about" className=" h-[40rem] w-[90%] flex flex-col md:flex-row items-center justify-center mt-52 md:p-10 gap-10 overflow-hidden m-auto">
       <MaskContainer
         revealText={
-          <p className="max-w-4xl mx-auto text-white-800 text-center  text-4xl font-bold">
+          <p className="max-w-4xl mx-auto text-white-800 text-center  md:text-4xl font-bold">
             Our Vision
           </p>
         }
@@ -21,7 +19,7 @@ const AboutUs = () => {
       </MaskContainer>
       <MaskContainer
         revealText={
-          <p className="max-w-4xl mx-auto text-white-800 text-center  text-4xl font-bold">
+          <p className="max-w-4xl mx-auto text-white-800 text-center  md:text-4xl font-bold">
             Our Mission
           </p>
         }
