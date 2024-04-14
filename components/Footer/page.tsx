@@ -82,7 +82,7 @@ const Footer = () => {
         variants={leftVariants}
         initial="initial"
         animate={isVisible ? "animate" : "initial"}
-        className=" flex lg:flex-row flex-col justify-center items-start backdrop-blur-sm bg-[#222526]/20 gap-6 lg:gap-20 col-span-2 lg:col-span-1 row-span-1 border border-gray-800/30 p-10 lg:p-28"
+        className=" flex lg:flex-row flex-col justify-center items-start backdrop-blur-sm bg-[#222526]/30 gap-6 lg:gap-20 col-span-2 lg:col-span-1 row-span-1 border border-gray-800/30 p-10 lg:p-28"
       >
         <div className="flex justify-center items-center gap-4">
           <Image src={"/Logo/Logo.png"} alt="Logo" width={30} height={50} />
@@ -97,7 +97,7 @@ const Footer = () => {
         variants={leftVariants}
         initial="rightInitial"
         animate={isVisible ? "rightAnimate" : "rightInitial"}
-        className=" backdrop-blur-sm bg-[#222526]/20 row-span-1 col-span-2 lg:row-span-2 lg:col-span-1 flex lg:flex-col items-center lg:items-start gap-10 justify-start lg:justify-center border lg:pl-20 p-10 border-gray-700/30"
+        className=" backdrop-blur-sm bg-[#222526]/30 row-span-1 col-span-2 lg:row-span-2 lg:col-span-1 flex lg:flex-col items-center lg:items-start gap-10 justify-start lg:justify-center border lg:pl-20 p-10 border-gray-700/30"
       >
         <h1 className=" font-bold text-3xl lg:text-8xl lg:w-[80%]">Get in touch now!</h1>
         <button className="border rounded-lg p-3 transition-all ease-in-out duration-500 hover:bg-white hover:text-black">
@@ -108,7 +108,7 @@ const Footer = () => {
         variants={leftVariants}
         initial="secondInitial"
         animate={isVisible ? "secondAnimate" : "secondInitial"}
-        className=" backdrop-blur-sm bg-[#222526]/20 flex justify-start lg:justify-center flex-wrap items-start gap-20 p-10 lg:p-28 lg:col-span-1 col-span-2 border border-gray-800/30"
+        className=" backdrop-blur-sm bg-[#222526]/30 flex justify-start lg:justify-center flex-wrap items-start gap-20 p-10 lg:p-28 lg:col-span-1 col-span-2 border border-gray-800/30"
       >
         <ul>
           <li className=" font-semibold pb-6">Useful Links</li>

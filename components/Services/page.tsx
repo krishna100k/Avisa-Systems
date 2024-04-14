@@ -1,84 +1,76 @@
 "use client";
 
+import { StickyScroll } from "../ui/sticky-scroll-reveal";
 import Image from "next/image";
-import { Tabs } from "../ui/tabs";
+
+const content = [
+  {
+    title: "Websites",
+    description:
+      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Collaborative Editing
+      </div>
+    ),
+  },
+  {
+    title: "Web Applications",
+    description:
+      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src="/linear.webp"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Mobile Applications",
+    description:
+      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
+        Version control
+      </div>
+    ),
+  },
+  {
+    title: "Rest API",
+    description:
+      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Running out of content
+      </div>
+    ),
+  },
+  {
+    title: "Content Management",
+    description:
+      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Collaborative Editing
+      </div>
+    ),
+  },
+];
 
 function Services() {
-  const tabs = [
-    {
-      title: "Websites",
-      value: "Websites",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Websites</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-    {
-      title: "Web Applications",
-      value: "Full stack Web Applications",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Full stack Web Applications</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-    {
-      title: "Mobile Applications",
-      value: "Mobile Apps",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Mobile Applications</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-    {
-      title: "REST API",
-      value: "REST API",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Rest API</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-    {
-      title: "Content Management",
-      value: "Content Management",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-green-700 to-green-900">
-          <p>Content Management</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-  ];
-
   return (
-    <div className="flex md:w-[90%] m-auto md:flex-row flex-col justify-center gap-10 items-center md:px-10 pt-10">
-    <div className="flex-1 flex justify-center md:justify-start items-center w-full h-full md:my-0 my-20">
-    <h1 className=" text-white text-center md:text-end opacity-95 text-5xl md:text-[6vw] leading-snug md:leading-relaxed font-black pt-10 md:pt-[18rem]">Services <br /> We <br /> Provide</h1>
-    </div>
-    <div id="services" className=" flex-2 w-[90%] md:w-full h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto md:my-40">
-      <Tabs tabs={tabs} />
-    </div>
+    <div className="flex flex-col justify-center items-center gap-16 md:gap-24 py-40">
+      <h1 id="services" className=" text-slate-200 font-bold text-4xl md:text-5xl text-center p-5">
+        A glimpse into the <br /><span className="bg-gradient-to-r from-green-400  to-green-700 bg-clip-text text-transparent">services</span> that we provide
+      </h1>
+      <StickyScroll content={content} />
     </div>
   );
 }
-
-const DummyContent = () => {
-  return (
-    <div
-      // src="/linear.webp"
-      // alt="dummy image"
-      // width="1000"
-      // height="1000"
-      // className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
-    />
-  );
-};
 
 export default Services;
