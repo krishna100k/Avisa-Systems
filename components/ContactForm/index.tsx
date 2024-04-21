@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import axios from "axios";
+import CircularProgress from '@mui/material/CircularProgress';
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -12,28 +13,43 @@ function ContactForm() {
   const [lastname, setLastname] = useState<string>("");
   const [company, setCompany] = useState<string>("");
   const [email, setEmail] = useState<string>("");
-  const [phone, setPhone] = useState<number>();
+  const [phone, setPhone] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     try {
+      setLoading(true);
+
+      const phoneNumber:number = parseInt(phone);
 
     const data = {
         firstname: firstname,
         lastname: lastname,
         company: company,
         email: email,
-        phone: phone,
+        phone: phoneNumber,
         message: message
     }
 
       const response = await axios.post(`/api/sendmail`, data);
       console.log(response);
       alert("Mail Sent Successfully!")
+      setLoading(false);
+
+      setFirstname("");
+      setLastname("");
+      setCompany("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+
     } catch (err) {
       console.log(err);
+      alert("Mail could not be sent ! Please try again.")
+      setLoading(false);
     }
   };
 
@@ -156,7 +172,7 @@ function ContactForm() {
                 autoComplete="tel"
                 required={true}
                 value={phone}
-                onChange={(e) => setPhone(e.target.valueAsNumber)}
+                onChange={(e) => setPhone(e.target.value)}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -183,9 +199,10 @@ function ContactForm() {
         <div className="mt-10">
           <button
             type="submit"
-            className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            disabled={loading && true}
+            className=" flex justify-center items-center w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Let's talk
+            {loading ? <CircularProgress style={{width: "20px", height: "20px"}} sx={{color: 'white'}} /> : <p>Let's talk</p>}
           </button>
         </div>
       </form>
