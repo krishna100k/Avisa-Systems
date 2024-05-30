@@ -28,6 +28,7 @@
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.1.4",
     "nodemailer": "^6.9.13",
+    "pg": "^8.11.5",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
@@ -35,11 +36,12 @@
     "tailwind-merge": "^2.2.2",
     "three": "^0.163.0",
     "three-globe": "^2.31.0",
-    "zod": "^3.22.4"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.14",
+    "@types/pg": "^8.11.6",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
