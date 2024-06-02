@@ -48,7 +48,7 @@ const Login = () => {
   return (
     <div className="w-full h-screen bg-[#F5F4F7] flex justify-center items-center">
       <form onSubmit={handleSubmit} className="bg-[#FFFFFF] w-full h-full sm:w-[30rem] sm:h-[37rem] rounded-md flex flex-col items-center gap-12 pt-28 sm:pt-16">
-        <Image src="/logo/black-logo.png" alt="Logo" width={70} height= {100} />
+        <img src="/logo/black-logo.png" alt="Logo" width={70} height= {100} />
 
         <div className="flex flex-col justify-center items-center gap-4 w-full">
         <div className="flex flex-col w-[80%] gap-1" >
