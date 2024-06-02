@@ -17,7 +17,6 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
-    // rest of the code
     extend: {
       animation: {
         scroll:
@@ -64,6 +63,7 @@ const config: Config = {
       );
     },
   ],
+  
 };
 
 function addVariablesForColors({ addBase, theme }: any) {
