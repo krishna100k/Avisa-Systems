@@ -4,13 +4,15 @@
 import AdminHeader from "@/components/AdminHeader"
 import AdminSideBar from "@/components/AdminSideBar"
 import {useSelector} from "react-redux"
-import {FormEvent, useState, useEffect} from "react"
+import {FormEvent, useState, useEffect, useRef} from "react"
 import axios from "axios"
 import { EmployeePayload } from "@/types/employee"
 
 const ProjectRegistrationForm = () => {
 
   const [user, setUser] = useState<EmployeePayload>();
+  const [loading, setLoading] = useState<boolean>(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -66,11 +68,15 @@ const ProjectRegistrationForm = () => {
 
 
       try{
+        setLoading(true);
         const response = await axios.post(`/api/newproject`, formData);
         alert(response?.data)
+        formRef.current?.reset();
         console.log(response);
+        setLoading(false);
       }catch(err : any){
         console.log(err);
+        setLoading(false);
         alert(err?.response?.data?.message)
       }
 
@@ -85,7 +91,7 @@ const ProjectRegistrationForm = () => {
         <AdminHeader user={user?.firstname as string} />
         <AdminSideBar />
         <div className={` transition-all duration-200 w-full h-auto sm:pt-24 flex justify-center ${isOpen ? "cmd:ml-[200px]" : "ml-[0px]"}`}>
-        <form onSubmit={handleSubmit} className="bg-[#FFFFFF] w-full h-full sm:w-[30rem] sm:h-auto pb-12 rounded-md flex flex-col items-center gap-12 pt-28 sm:mb-16 sm:pt-16">
+        <form ref={formRef} onSubmit={handleSubmit} className="bg-[#FFFFFF] w-full h-full sm:w-[30rem] sm:h-auto pb-12 rounded-md flex flex-col items-center gap-12 pt-28 sm:mb-16 sm:pt-16">
           <h1 className=" font-extrabold text-xl">Project Registration Form</h1>
 
         <div className="flex flex-col justify-center items-center gap-4 w-full">
@@ -115,7 +121,7 @@ const ProjectRegistrationForm = () => {
         </div>
         </div>
 
-        <button  type="submit" className="w-[80%] bg-[#3EB649] rounded-md py-2 mt-7">Submit</button>
+        <button  type="submit" className="w-[80%] bg-[#3EB649] rounded-md py-2 mt-7">{loading ? "Submitting" : "Submit"}</button>
 
         </form>
         </div>
