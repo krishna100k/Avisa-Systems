@@ -29,7 +29,7 @@ const AdminHeader: React.FC<{user : string}>  = ({user}) => {
   }
 
   return (
-    <div className="bg-[#F9FAFB] w-full h-[60px] border border=[#969696] flex items-center justify-between px-5 z-[1000]">
+    <div className="bg-[#F9FAFB] fixed w-full h-[60px] border border=[#969696] flex items-center justify-between px-5 z-[1000]">
         <div className="flex gap-5 h-full items-center">
         <button onClick={() => dispatch(isOpen(!open))}>
         <RxHamburgerMenu className="text-2xl text-black " />

@@ -38,12 +38,12 @@ const AdminSideBar = () => {
       initial={isOpen ? "open" : "closed"}
       animate={isOpen ? "open" : "closed"}
       variants={sideBarVariants}
-      className={`bg-[#3EB649] h-full fixed left-0 overflow-hidden text-white flex flex-col items-center pt-24`}
+      className={`bg-[#3EB649] h-full fixed left-0 overflow-hidden text-white flex flex-col items-center pt-40`}
     >
       {pages.map((page, i) => {
         return(
-          <div key={i} >
-            <Link className=" hover:bg-white/20 p-2 rounded-sm transition-all" href={page.link}>{page.name}</Link>
+          <div  key={i} >
+            <Link className=" hover:bg-white/20 duration-500 py-2 px-4 rounded-md transition-all" href={page.link}>{page.name}</Link>
           </div>
         )
       })}
