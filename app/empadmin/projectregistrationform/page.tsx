@@ -84,7 +84,7 @@ const ProjectRegistrationForm = () => {
         <style>{'body { background: #F5F4F7; }'}</style>
         <AdminHeader user={user?.firstname as string} />
         <AdminSideBar />
-        <div className={` transition-all duration-200 w-full h-auto sm:pt-24 flex justify-center ${isOpen ? "md:ml-[200px]" : "ml-[0px]"}`}>
+        <div className={` transition-all duration-200 w-full h-auto sm:pt-24 flex justify-center ${isOpen ? "cmd:ml-[200px]" : "ml-[0px]"}`}>
         <form onSubmit={handleSubmit} className="bg-[#FFFFFF] w-full h-full sm:w-[30rem] sm:h-auto pb-12 rounded-md flex flex-col items-center gap-12 pt-28 sm:mb-16 sm:pt-16">
           <h1 className=" font-extrabold text-xl">Project Registration Form</h1>
 

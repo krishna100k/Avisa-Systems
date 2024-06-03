@@ -35,7 +35,16 @@ const config: Config = {
       transitionTimingFunction: {
         custom: "cubic-bezier(0.4, 0, 0.2, 1)",
       },
+      screens: {
+        'sm': '640px',      // Default: 640px
+        'md': '768px',      // Default: 768px
+        'lg': '1024px',     // Default: 1024px
+        'xl': '1280px',     // Default: 1280px
+        '2xl': '1536px',    // Default: 1536px
+        'cmd': {'min': '769'}, // Example of a custom breakpoint range
+      },
     },
+
   },
   plugins: [
     require('@tailwindcss/forms'),
