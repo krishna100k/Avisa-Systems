@@ -49,6 +49,7 @@ export const POST = async (req: NextRequest) => {
          const result = await client.query(insertQuery, values);
     
          console.log(result);
+         client.end();
 
         return NextResponse.json("Data submitted Successfully!", {status: 200});
     }catch(err){

@@ -8,22 +8,9 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import {useEffect, useState} from "react";
 
-const AdminHeader  = () => {
+const AdminHeader: React.FC<{user : string}>  = ({user}) => {
 
-  const [user, setUser] = useState<string>("");
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try{
-        const response = await axios.get("/api/employeeDetails");
-        setUser(response?.data?.firstname);
-      }catch(err){
-        console.log(err);
-      }
-    }
-  
-    fetchUser();
-  }, [])
 
   const router = useRouter();
   const dispatch = useDispatch();

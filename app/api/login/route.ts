@@ -24,6 +24,8 @@ export const POST = async (req:NextRequest) => {
 
         const resp = await client.query(query, values);
 
+        client.end();
+
         const user = resp.rows[0];
 
         if(!user){
@@ -37,6 +39,10 @@ export const POST = async (req:NextRequest) => {
         const payload = {
             empid: user?.empid,
             firstname: user?.firstname,
+            lastname: user?.lastname,
+            email: user?.email,
+            phone: user?.mobile,
+            role : user?.role
         }
 
         const token = jwt.sign(payload, jwtsecret);
